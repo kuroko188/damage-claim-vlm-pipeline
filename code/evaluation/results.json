@@ -1,0 +1,121 @@
+{
+  "sample_rows": 20,
+  "strategies": {
+    "two_stage": {
+      "description": "gemini-2.5-flash-lite text parse + gemini-2.5-flash vision",
+      "metrics": {
+        "rows": 20,
+        "exact_row_matches": 2,
+        "claim_status_accuracy": 0.9,
+        "evidence_standard_met_accuracy": 0.85,
+        "issue_type_accuracy": 0.55,
+        "object_part_accuracy": 0.6,
+        "severity_accuracy": 0.45,
+        "valid_image_accuracy": 0.85,
+        "risk_flags_accuracy": 0.5,
+        "supporting_image_ids_accuracy": 0.85,
+        "evidence_standard_met_reason_exact_match_rate": 0.0,
+        "claim_status_justification_exact_match_rate": 0.0,
+        "exact_row_accuracy": 0.1,
+        "by_claim_object": {
+          "car": {
+            "rows": 8,
+            "claim_status_correct": 8,
+            "claim_status_accuracy": 1.0
+          },
+          "laptop": {
+            "rows": 6,
+            "claim_status_correct": 5,
+            "claim_status_accuracy": 0.8333
+          },
+          "package": {
+            "rows": 6,
+            "claim_status_correct": 5,
+            "claim_status_accuracy": 0.8333
+          }
+        },
+        "claim_status_confusion": {
+          "contradicted": {
+            "contradicted": 3,
+            "supported": 2
+          },
+          "not_enough_information": {
+            "not_enough_information": 3
+          },
+          "supported": {
+            "supported": 12
+          }
+        }
+      },
+      "usage": {
+        "input_tokens": 53182,
+        "output_tokens": 6689,
+        "model_calls": 40,
+        "images_processed": 29,
+        "text_calls": 20,
+        "vision_calls": 20,
+        "estimated_usd": 0.0169
+      },
+      "mismatch_rows": 18
+    },
+    "single_shot": {
+      "description": "gemini-2.5-flash only, one call per claim",
+      "metrics": {
+        "rows": 20,
+        "exact_row_matches": 2,
+        "claim_status_accuracy": 0.8,
+        "evidence_standard_met_accuracy": 0.9,
+        "issue_type_accuracy": 0.45,
+        "object_part_accuracy": 0.8,
+        "severity_accuracy": 0.4,
+        "valid_image_accuracy": 0.85,
+        "risk_flags_accuracy": 0.4,
+        "supporting_image_ids_accuracy": 0.8,
+        "evidence_standard_met_reason_exact_match_rate": 0.0,
+        "claim_status_justification_exact_match_rate": 0.0,
+        "exact_row_accuracy": 0.1,
+        "by_claim_object": {
+          "car": {
+            "rows": 8,
+            "claim_status_correct": 6,
+            "claim_status_accuracy": 0.75
+          },
+          "laptop": {
+            "rows": 6,
+            "claim_status_correct": 5,
+            "claim_status_accuracy": 0.8333
+          },
+          "package": {
+            "rows": 6,
+            "claim_status_correct": 5,
+            "claim_status_accuracy": 0.8333
+          }
+        },
+        "claim_status_confusion": {
+          "contradicted": {
+            "supported": 3,
+            "not_enough_information": 1,
+            "contradicted": 1
+          },
+          "not_enough_information": {
+            "not_enough_information": 3
+          },
+          "supported": {
+            "supported": 12
+          }
+        }
+      },
+      "usage": {
+        "input_tokens": 41818,
+        "output_tokens": 3744,
+        "model_calls": 20,
+        "images_processed": 29,
+        "text_calls": 0,
+        "vision_calls": 20,
+        "estimated_usd": 0.0116
+      },
+      "mismatch_rows": 18
+    }
+  },
+  "final_strategy": "two_stage"
+}

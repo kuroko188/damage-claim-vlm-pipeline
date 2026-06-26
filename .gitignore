@@ -1,0 +1,32 @@
+# Secrets
+.env
+code/.env
+*.pem
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+dist/
+build/
+
+# Runtime / generated
+code/.cache/
+output_smoke.csv
+*.log
+
+# Evaluation artifacts (regenerate with evaluation/main.py)
+code/evaluation/sample_predictions_*.csv
+code/evaluation/sample_mismatches_*.csv
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Archives
+*.zip
