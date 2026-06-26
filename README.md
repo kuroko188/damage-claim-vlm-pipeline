@@ -92,8 +92,3 @@ Options: `--limit N`, `--resume` (skip rows already in output), custom `--input`
 - **Google Gemini API** (`google-genai`) — multimodal JSON generation
 - **python-dotenv** — local API key management (never committed)
 
-No FastAPI, LangChain, or database — this is an offline batch pipeline optimized for reproducible evaluation.
-
-## License
-
-MIT (add a `LICENSE` file if you publish publicly).
